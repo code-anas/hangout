@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {createStackNavigator} from '@react-navigation/stack';
 // Screens
 import Login from './src/auth/login';
+import SignUp from './src/auth/signup';
 
 const RootStack = createStackNavigator();
 
@@ -18,6 +19,7 @@ function AppNavigator(props) {
               headerShown: false,
             }}>
             <RootStack.Screen name="Login" component={Login} />
+            <RootStack.Screen name="SignUp" component={SignUp} />
           </RootStack.Navigator>
         </NavigationContainer>
       </SafeAreaView>

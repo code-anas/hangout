@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
   Text,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -14,6 +15,15 @@ import FastImage from 'react-native-fast-image';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Login = props => {
+  const [inputsArray, setInputArray] = useState([
+    {value: '', name: 'User Name'},
+    {value: '', name: 'First Name'},
+    {value: '', name: 'Last Name'},
+    {value: '', name: 'Phone Number'},
+    {value: '', name: 'Password'},
+    {value: '', name: 'Confirm Password'},
+  ]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -24,27 +34,36 @@ const Login = props => {
         style={styles.waveImage}
       />
       <View style={styles.cardDesign}>
-        <View style={styles.cardView}>
-          <TextInput
-            style={styles.input}
-            placeholder="Phone Number"
-            placeholderTextColor={'#595959'}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            placeholderTextColor={'#595959'}
-          />
-          <TouchableOpacity style={styles.forgotPassView}>
-            <Text style={styles.forgotPassText}>Forgot Password?</Text>
+        <View style={styles.topContent}>
+          <Text style={styles.createText}>Create Account</Text>
+          <TouchableOpacity>
+            <FastImage
+              source={require('../../assets/images/camera.png')}
+              style={styles.cameraImage}
+            />
           </TouchableOpacity>
+        </View>
+        <View style={styles.textInputView}>
+          {inputsArray?.map((res, key) => {
+            return (
+              <TextInput
+                key={key}
+                style={styles.input}
+                placeholder={res.name}
+                placeholderTextColor={'#595959'}
+                value={inputsArray[key].value}
+                onChangeText={value => {
+                  inputsArray[key].value = value;
+                  setInputArray(inputsArray);
+                }}
+              />
+            );
+          })}
           <TouchableOpacity style={styles.signInBtn}>
             <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.registerBtn}
-            onPress={() => props.navigation.navigate('SignUp')}>
-            <Text style={styles.registerText}>Register</Text>
+          <TouchableOpacity style={styles.forgotPassView}>
+            <Text style={styles.forgotPassText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -87,13 +106,12 @@ const styles = StyleSheet.create({
     height: hp(72),
     width: '100%',
   },
-  cardView: {
+  textInputView: {
     height: '100%',
     alignItems: 'center',
-    marginTop: hp(10),
   },
   input: {
-    marginVertical: '2%',
+    marginVertical: '1%',
     width: '80%',
     height: hp(5),
     borderBottomWidth: 1,
@@ -114,7 +132,7 @@ const styles = StyleSheet.create({
     paddingVertical: '5%',
     alignItems: 'center',
     borderRadius: 40,
-    marginTop: '10%',
+    marginTop: '5%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -134,6 +152,21 @@ const styles = StyleSheet.create({
   registerText: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  topContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: '5%',
+    marginHorizontal: '5%',
+    alignItems: 'center',
+  },
+  createText: {
+    fontSize: 26,
+    fontWeight: 'bold',
+  },
+  cameraImage: {
+    height: hp(10),
+    width: hp(10),
   },
 });
 
