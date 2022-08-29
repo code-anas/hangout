@@ -36,7 +36,7 @@ const Login = props => {
             placeholderTextColor={'#595959'}
           />
           <TouchableOpacity style={styles.forgotPassView}>
-            <Text style={styles.forgotPassText}>Forgot Password?</Text>
+            <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.signInBtn}>
             <Text style={styles.signInText}>Sign In</Text>
