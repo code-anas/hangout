@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
   registerText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color:'#000000'
   },
 });
 
