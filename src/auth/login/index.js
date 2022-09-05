@@ -44,7 +44,7 @@ const Login = props => {
           <TouchableOpacity
             style={styles.registerBtn}
             onPress={() => props.navigation.navigate('SignUp')}>
-            <Text style={styles.registerText}>Register</Text>
+            <Text style={styles.registerText}>Register Your Account</Text>
           </TouchableOpacity>
         </View>
       </View>
