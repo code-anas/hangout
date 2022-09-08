@@ -16,6 +16,7 @@ const Groups = () => {
         {
             groupName: 'Workout Squad',
             colorLayer: '#E45F5490',
+            description: 'Im developing an app in React Native',
             user: [
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
@@ -31,49 +32,94 @@ const Groups = () => {
                 { image: require('../../assets/images/image.png') }
             ],
             detail: {
-                description: 'djndkbkjdvndjnvdk;nvdnv',
                 latestTime: '10:30',
                 events: [
-                    { time: '10:30', name: 'Usman', date: 'sep 06th, 2022' },
-                    { time: '10:30', name: 'Usman', date: 'sep 06th, 2022' },
-                    { time: '10:30', name: 'Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'H Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Iqbal', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
                 ]
-
             }
         },
         {
-            groupName: 'Workout Squad Two', colorLayer: '#9D3E9490', user: [
+            groupName: 'Workout Squad Two', colorLayer: '#9D3E9490',
+            description: 'My Nmae is Usman Bhatti.Im developing an app in React Native',
+            user: [
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
-
-            ]
+            ],
+            detail: {
+                latestTime: '10:30',
+                events: [
+                    { time: '10:30 AM', name: 'H Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Iqbal', date: 'sep 06th, 2022' },
+                    { time: '10:30 Am', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 Am', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 Am', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                ]
+            }
         },
         {
-            groupName: 'Workout Squad Three', colorLayer: '#2D39A890', user: [
+            groupName: 'Workout Squad Three', colorLayer: '#2D39A890',
+            description: 'My Nmae is Usman Bhatti.Im developing an app in React Native.I reach my goal ASAP INSHALLAH',
+            user: [
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
-
-            ]
+            ],
+            detail: {
+                latestTime: '10:30',
+                events: [
+                    { time: '10:30 AM', name: 'H Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Iqbal', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                ]
+            }
         },
         {
-            groupName: 'Workout Squad Four', colorLayer: '#00000090', user: [
+            groupName: 'Workout Squad Four', colorLayer: '#00000090',
+            description: 'My Nmae is Usman Bhatti.Im developing an app in React Native.I reach my goal ASAP INSHALLAH',
+            user: [
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
-
-            ]
+            ],
+            detail: {
+                latestTime: '10:30',
+                events: [
+                    { time: '10:30 AM', name: 'H Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Iqbal', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                ]
+            }
         },
         {
-            groupName: 'Workout Squad One', colorLayer: '#12977790', user: [
+            groupName: 'Workout Squad One', colorLayer: '#12977790',
+            description: 'My Nmae is Usman Bhatti.Im developing an app in React Native.I reach my goal ASAP INSHALLAH',
+            user: [
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
                 { image: require('../../assets/images/image.png') },
-            ]
+            ],
+            detail: {
+                latestTime: '10:30',
+                events: [
+                    { time: '10:30 AM', name: 'H Usman', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Iqbal', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                    { time: '10:30 AM', name: 'Usman Bhatti', date: 'sep 06th, 2022' },
+                ]
+            }
         },
     ]
     const [show, setShow] = React.useState()
@@ -96,106 +142,86 @@ const Groups = () => {
                 </TouchableOpacity>
             </View>
             {/* First View */}
-            <ScrollView>
-                <View style={styles.firstViewContainer}>
-                    {arr.map((res, index) => {
-                        return (
-                            <View style={show === index ? styles.firstView : null}>
-                                <ImageBackground
-                                    source={require('../../assets/images/groupSquad.png')}
-                                    style={show === index ? styles.imageBackground : styles.imageBackgroundOne}>
-                                    <View style={[styles.imageBackgroundLayer, { backgroundColor: res.colorLayer }]}>
+            <View style={styles.firstViewContainer}>
+                <ScrollView>
+                    <View>
+                        {arr.map((res, index) => {
+                            return (
+                                <View style={show === index ? styles.firstView : null}>
+                                    <ImageBackground
+                                        source={require('../../assets/images/groupSquad.png')}
+                                        style={show === index ? styles.imageBackground : styles.imageBackgroundOne}>
+                                        <View style={[styles.imageBackgroundLayer, { backgroundColor: res.colorLayer }]}>
+                                            <View style={styles.userImagesView}>
+                                                <Text style={styles.txtWorkoutSquad}>{res.groupName}</Text>
+                                                <View style={styles.userImage}>
+                                                    {res.user.slice(0, 5).map((data) => {
+                                                        return (
+                                                            <Image
+                                                                source={data.image}
+                                                                style={styles.imageOne} />
+                                                        )
+                                                    })}
+                                                    <View style={styles.whiteCircle}>
+                                                        <Text style={styles.txtSeven}>{res.user.length >= 8 ? '7+' : res.user.length}</Text>
+                                                    </View>
+                                                </View>
+                                                <Text style={styles.txt22Member}>{res.user.length} Members • 3 Upcoming Events</Text>
+                                            </View>
+                                            <View style={styles.optionAndArrowButton}>
+                                                <TouchableOpacity>
+                                                    <Icon name='ellipsis-vertical' size={25} color='#FFFFFF' />
+                                                </TouchableOpacity>
+                                                <TouchableOpacity
+                                                    onPress={() => {
+                                                        show === index ? setShow(null) : setShow(index)
+                                                    }}
+                                                    style={styles.arrowDownIcon}>
+                                                    <Icon name='chevron-down' size={25} color='#FFFFFF' />
+                                                </TouchableOpacity>
+                                            </View>
+                                        </View>
+                                    </ImageBackground>
+                                    {show === index ? (
                                         <View>
-                                            <Text style={styles.txtWorkoutSquad}>{res.groupName}</Text>
-                                            <View style={styles.firstViewImages}>
-                                                {res.user.slice(0, 5).map((data) => {
+                                            <View style={styles.descriptionTxtView}>
+                                                <Text style={styles.txtDiscription}>{res.description}</Text>
+                                            </View>
+                                            <View style={styles.upcomingHangoutContainer}>
+                                                <View style={styles.calenderPngView}>
+                                                    <TouchableOpacity>
+                                                        <Icon name='calendar-outline' size={18} color='#7C7C7C' />
+                                                    </TouchableOpacity>
+                                                    <Text style={styles.txtUpcomingHangout}>Upcoming Hangouts</Text>
+                                                </View>
+                                                <TouchableOpacity style={styles.createNewView}>
+                                                    <Text style={styles.txtCreateNew}>Create New</Text>
+                                                    <Icon name='add-circle-outline' size={25} color='#1466B7' />
+                                                </TouchableOpacity>
+                                            </View>
+                                            <ScrollView horizontal={true} style={styles.schedulesContainer}>
+                                                {res.detail.events.map((detailRes) => {
                                                     return (
-                                                        <Image
-                                                            source={data.image}
-                                                            style={styles.imageOne} />
+                                                        <View style={styles.scheduleOne}>
+                                                            <View style={styles.clockOrTime}>
+                                                                <Icon name='alarm-outline' size={16} color='#7C7C7C' />
+                                                                <Text style={styles.txtTime}>{detailRes.time}</Text>
+                                                            </View>
+                                                            <Text style={styles.txtJason}>{detailRes.name}</Text>
+                                                            <Text style={styles.txtDate}>{detailRes.date}</Text>
+                                                        </View>
                                                     )
                                                 })}
-                                                <View style={styles.whiteCircle}>
-                                                    <Text style={styles.txtSeven}>{res.user.length >= 8 ? '7+' : res.user.length}</Text>
-                                                </View>
-                                            </View>
-                                            <Text style={styles.txt22Member}>22 Members • 3 Upcoming Events</Text>
+                                            </ScrollView>
                                         </View>
-                                        <View style={styles.optionAndArrowButton}>
-                                            <TouchableOpacity>
-                                                <Icon name='ellipsis-vertical' size={25} color='#FFFFFF' />
-                                            </TouchableOpacity>
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    console.log('usman', res.id);
-                                                    show === index ? setShow(null) : setShow(index)
-                                                }}
-                                                style={styles.arrowDownPng}>
-                                                <Icon name='chevron-down' size={25} color='#FFFFFF' />
-                                            </TouchableOpacity>
-                                        </View>
-                                    </View>
-                                </ImageBackground>
-                                {show === index ? (
-                                    <View>
-                                        <Text style={styles.txtDiscription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna
-                                            aliqua. Ut enim ad minim veniam,</Text>
-                                        <View style={styles.upcomingHangoutContainer}>
-                                            <View style={styles.calenderPngView}>
-                                                <TouchableOpacity>
-                                                    <Icon name='calendar-outline' size={18} color='#7C7C7C' />
-                                                </TouchableOpacity>
-                                                <Text style={styles.txtUpcomingHangout}>Upcoming Hangouts</Text>
-                                            </View>
-                                            <TouchableOpacity style={styles.createNewView}>
-                                                <Text style={styles.txtCreateNew}>Create New</Text>
-                                                <Icon name='add-circle-outline' size={25} color='#1466B7' />
-                                            </TouchableOpacity>
-                                        </View>
-                                        <ScrollView horizontal={true} style={styles.schedulesContainer}>
-                                            <View style={styles.scheduleOne}>
-                                                <View style={styles.clockOrTime}>
-                                                    <Icon name='alarm-outline' size={16} color='#7C7C7C' />
-                                                    <Text style={styles.txtTime}>12:30 PM</Text>
-                                                </View>
-                                                <Text style={styles.txtJason}>Jason’s Bday</Text>
-                                                <Text style={styles.txtDate}>Jan 14th, 2020</Text>
-                                            </View>
-                                            <View style={styles.scheduleTwo}>
-                                                <View style={styles.clockOrTime}>
-                                                    <Icon name='alarm-outline' size={16} color='#7C7C7C' />
-                                                    <Text style={styles.txtTime}>12:30 PM</Text>
-                                                </View>
-                                                <Text style={styles.txtBbq}>BBQ</Text>
-                                                <Text style={styles.txtDate}>Jan 14th, 2020</Text>
-                                            </View>
-                                            <View style={styles.scheduleThree}>
-                                                <View style={styles.clockOrTime}>
-                                                    <Icon name='alarm-outline' size={16} color='#7C7C7C' />
-                                                    <Text style={styles.txtTime}>12:30 PM</Text>
-                                                </View>
-                                                <Text style={styles.txtMovieNight}>Movie Night</Text>
-                                                <Text style={styles.txtDate}>Jan 14th, 2020</Text>
-                                            </View>
-                                            <View style={styles.scheduleThree}>
-                                                <View style={styles.clockOrTime}>
-                                                    <Icon name='alarm-outline' size={16} color='#7C7C7C' />
-                                                    <Text style={styles.txtTime}>12:30 PM</Text>
-                                                </View>
-                                                <Text style={styles.txtMovieNight}>Movie Night</Text>
-                                                <Text style={styles.txtDate}>Jan 14th, 2020</Text>
-                                            </View>
-                                        </ScrollView>
-                                    </View>
-                                ) : null}
-                            </View>
-                        )
-                    }
-                    )}
-
-                </View>
-            </ScrollView>
+                                    ) : null}
+                                </View>
+                            )
+                        }
+                        )}
+                    </View>
+                </ScrollView>
+            </View>
         </View >
     );
 };
@@ -290,7 +316,7 @@ const styles = StyleSheet.create(
             alignItems: 'center'
         },
         firstView: {
-            height: hp('48%'),
+            height: hp('49%'),
             width: wp('92%'),
             backgroundColor: '#FFFFFF',
             borderRadius: 30,
@@ -340,6 +366,9 @@ const styles = StyleSheet.create(
             paddingHorizontal: wp('5%'),
             paddingVertical: hp('2%')
         },
+        userImagesView: {
+            width: wp('65%')
+        },
         txtWorkoutSquad: {
             fontSize: 15,
             fontWeight: '600',
@@ -352,7 +381,7 @@ const styles = StyleSheet.create(
             marginTop: hp('1%'),
             marginRight: wp('2%'),
         },
-        firstViewImages: {
+        userImage: {
             flexDirection: 'row',
         },
         whiteCircle: {
@@ -379,14 +408,18 @@ const styles = StyleSheet.create(
             paddingHorizontal: wp('9%'),
             paddingVertical: hp('1%'),
         },
-        arrowDownPng: {
+        arrowDownIcon: {
             marginTop: hp('3%'),
+        },
+        descriptionTxtView: {
+            height: hp('8%'),
+            marginTop: hp('2%'),
+            // justifyContent:'center',
         },
         txtDiscription: {
             fontWeight: '400',
             color: '#00000050',
             paddingHorizontal: wp('4%'),
-            marginTop: hp('2%')
         },
         txtUpcomingHangout: {
             fontSize: 12,
@@ -412,7 +445,7 @@ const styles = StyleSheet.create(
             paddingHorizontal: wp('4%'),
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginTop: hp('3%')
+            marginTop: hp('2%')
         },
         scheduleOne: {
             height: hp('13%'),
@@ -420,31 +453,13 @@ const styles = StyleSheet.create(
             backgroundColor: '#EFEFEF',
             borderRadius: 25,
             alignItems: 'center',
-            marginRight: 10,
             justifyContent: 'center',
-        },
-        scheduleTwo: {
-            height: hp('13%'),
-            width: wp('27%'),
-            backgroundColor: '#EFEFEF',
-            borderRadius: 25,
-            alignItems: 'center',
-            justifyContent: 'center', 
-            marginRight: 10
-        },
-        scheduleThree: {
-            height: hp('13%'),
-            width: wp('27%'),
-            backgroundColor: '#EFEFEF',
-            borderRadius: 25,
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginRight: 10
+            marginRight:wp('2%'),
         },
         schedulesContainer: {
             flexDirection: 'row',
-            paddingHorizontal: wp('4%'),
-            paddingVertical: hp('3%'),
+            marginTop:hp('3%'),
+            paddingHorizontal: wp('3%'),
         },
         txtTime: {
             fontSize: 10,
@@ -480,9 +495,6 @@ const styles = StyleSheet.create(
             color: '#7C7C7C',
             marginTop: hp('0.5%')
         },
-
-
     },
 );
-
 export default Groups;
