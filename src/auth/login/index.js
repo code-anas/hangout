@@ -11,7 +11,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Login = props => {
   return (
@@ -35,16 +35,20 @@ const Login = props => {
             placeholder="Password"
             placeholderTextColor={'#595959'}
           />
-          <TouchableOpacity style={styles.forgotPassView}>
+          <TouchableOpacity
+            onPress={() => alert('Coming Soon InshAllah')}
+            style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signInBtn}>
-            <Text style={styles.signInText}>Sign In</Text>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Groups')}
+            style={styles.signInBtn}>
+            <Text style={styles.signInText}>Log In</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.registerBtn}
             onPress={() => props.navigation.navigate('SignUp')}>
-            <Text style={styles.registerText}>Register Your Account</Text>
+            <Text style={styles.registerText}>Register</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -64,6 +68,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color:'#45D4FF'
   },
   waveImage: {
     height: hp(14),
@@ -111,7 +116,7 @@ const styles = StyleSheet.create({
   signInBtn: {
     backgroundColor: '#45D4FF',
     width: wp(70),
-    paddingVertical: '5%',
+    paddingVertical: '4%',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '10%',
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
   registerText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color:'#000000'
+    color: '#000000'
   },
 });
 

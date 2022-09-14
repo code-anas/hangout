@@ -1,5 +1,6 @@
 import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
     Text,
     View,
@@ -11,23 +12,24 @@ import {
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <View style={styles.flex1Container}>
             <View style={styles.headerContainer}>
                 <View style={styles.headerView}>
-                    <TouchableOpacity>
-                        <Image
-                            source={require('../../assets/images/cross.png')} />
+                    <TouchableOpacity
+                        style={styles.crossButton}
+                        onPress={() => props.navigation.goBack('Groups')}>
+                        <Icon name='close' size={28} color='#FFFFFF' />
                     </TouchableOpacity>
                     <Text style={styles.txtProfile}>Profile</Text>
-                    <TouchableOpacity style={styles.profilepng}>
-                        <Image
-                            source={require('../../assets/images/profile.png')} />
+                    <TouchableOpacity
+                        onPress={() => props.navigation.navigate('FriendList')}>
+                        <Icon name='people' size={25} color='#FFFFFF' />
                     </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Image
-                            source={require('../../assets/images/setting.png')} />
+                    <TouchableOpacity
+                        onPress={() => props.navigation.navigate('Setting')}>
+                        <Icon name='settings-outline' size={21} color='#FFFFFF' />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -61,15 +63,16 @@ const styles = StyleSheet.create(
             height: hp('13%'),
             width: wp('100%'),
             backgroundColor: '#45D4FF',
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
         },
         headerView: {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingHorizontal: wp('4%'),
-            marginTop: hp('9%')
+            paddingHorizontal: wp('3%'),
+            marginTop: hp('7%')
+        },
+        crossButton: {
+            marginLeft: wp('-1%')
         },
         txtProfile: {
             fontSize: 20,

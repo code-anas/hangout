@@ -1,5 +1,6 @@
 import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
     Text,
     View,
@@ -10,20 +11,27 @@ import {
     ScrollView
 } from 'react-native';
 
-const FriendList = () => {
+const FriendList = (props) => {
+    let arr = [
+        { name: 'Usman Bhatti' },
+        { name: 'Abdul Haseeb' },
+        { name: 'Huzam Mughal' },
+        { name: 'Asfand Butt' },
+        { name: 'Hamza Ahzam' },
+        { name: 'Usman Chitto' },
+    ]
     return (
         <View style={styles.flex1Container}>
             <View style={styles.headerContainer}>
                 <View style={styles.headerView}>
-                    <TouchableOpacity>
-                        <Image
-                            source={require('../../assets/images/leftArrow.png')} />
+                    <TouchableOpacity
+                        style={styles.leftArrowButton}
+                        onPress={() => props.navigation.goBack('profile')}>
+                        <Icon name='chevron-back-outline' size={25} color='#FFFFFF' />
                     </TouchableOpacity>
                     <Text style={styles.TxtfriendList}>FriendList</Text>
                     <TouchableOpacity>
-                        <Image
-                            source={require('../../assets/images/plusCircle.png')}
-                            style={styles.plusCirclePng} />
+                        <Icon name='add-circle-outline' size={28} color='#FFFFFF' />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -34,60 +42,22 @@ const FriendList = () => {
                 <TextInput style={styles.txtInput}
                     placeholder='Search friend' placeholderTextColor={'#00000050'} />
             </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/image.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/imageTwo.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/imageThree.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/image.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/imageTwo.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.friendViewOne}>
-                <Image
-                    source={require('../../assets/images/imageThree.jpeg')}
-                    style={styles.image} />
-                <Text style={styles.usmanBhatti}>Usman Bhatti</Text>
-                <TouchableOpacity>
-                    <Text style={styles.buttonRemove}>Remove</Text>
-                </TouchableOpacity>
-            </View>
+            {arr.map((res) => {
+                return (
+                    <View style={styles.friendViewOne}>
+                        <Image
+                            source={require('../../assets/images/image.png')}
+                            style={styles.image} />
+                        <View style={styles.namesView}>
+                            <Text style={styles.usmanBhatti}>{res.name}</Text>
+                        </View>
+                        <TouchableOpacity>
+                            <Text style={styles.buttonRemove}>Remove</Text>
+                        </TouchableOpacity>
+                    </View>
+                )
+            })}
+
         </View>
 
 
@@ -102,24 +72,21 @@ const styles = StyleSheet.create(
             height: hp('13%'),
             width: wp('100%'),
             backgroundColor: '#45D4FF',
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
         },
         headerView: {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
             paddingHorizontal: wp('3%'),
-            marginTop: hp('8%')
+            marginTop: hp('7%')
+        },
+        leftArrowButton: {
+            marginLeft:wp('-1%') 
         },
         TxtfriendList: {
             fontSize: 22,
             fontWeight: '700',
             color: '#FFFFFF',
-        },
-        plusCirclePng: {
-            height: hp('3%'),
-            width: wp('6%')
         },
         txtInputview: {
             marginTop: hp('4%'),
@@ -136,15 +103,19 @@ const styles = StyleSheet.create(
             flex: 1,
             fontSize: 18,
             fontWeight: '400',
-            marginLeft: wp('3%')
+            marginLeft: wp('3%'),
+            color: '#000000'
         },
         searchIconPng: {
             marginLeft: wp('5%')
         },
         image: {
-            width: wp('14%'),
-            height: hp('7%'),
+            width: wp('10%'),
+            height: hp('5%'),
             borderRadius: 40
+        },
+        namesView: {
+            width: wp('60%')
         },
         usmanBhatti: {
             fontSize: 16,
@@ -161,7 +132,7 @@ const styles = StyleSheet.create(
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingHorizontal: wp('5%'),
+            paddingHorizontal: wp('4%'),
             marginTop: wp('8%')
         }
 

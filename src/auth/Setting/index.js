@@ -1,5 +1,6 @@
 import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
     Text,
     View,
@@ -10,38 +11,34 @@ import {
     ScrollView
 } from 'react-native';
 
-const Setting = () => {
+const Setting = (props) => {
     return (
         <View style={styles.flex1Container}>
             <View style={styles.headerContainer}>
                 <View style={styles.headerView}>
-                    <TouchableOpacity>
-                        <Image source={require('../../assets/images/cross.png')} />
+                    <TouchableOpacity
+                        style={styles.crossButton}
+                        onPress={() => props.navigation.goBack('Profile')}>
+                        <Icon name='close' size={28} color='#FFFFFF' />
                     </TouchableOpacity>
                     <Text style={styles.txtSetting}>Settings</Text>
-                    <Text style={styles.txt}>A</Text>
+                    <Text style={styles.txt}>AA</Text>
                 </View>
             </View>
             <Text style={styles.accInfoTxt}>Account Information</Text>
             <View style={styles.inputViewContainer}>
                 <View style={styles.viewInputOne}>
-                    <Image
-                        source={require('../../assets/images/vector.png')}
-                        style={styles.inputImage} />
+                    <Icon name='person-outline' size={20} color='#595959' />
                     <TextInput style={styles.inputOne}
                         placeholder='First Name' placeholderTextColor={'#000000'} />
                 </View>
                 <View style={styles.viewInputTwo}>
-                    <Image
-                        source={require('../../assets/images/vector.png')}
-                        style={styles.inputImage} />
+                    <Icon name='person-outline' size={20} color='#595959' />
                     <TextInput style={styles.inputTwo}
                         placeholder='Last Name' placeholderTextColor={'#000000'} />
                 </View>
                 <View style={styles.viewInputThree}>
-                    <Image
-                        source={require('../../assets/images/message.png')}
-                        style={styles.inputImage} />
+                    <Icon name='mail-outline' size={20} color='#595959' />
                     <TextInput style={styles.inputThree}
                         placeholder='Bhatti@gmail.com' placeholderTextColor={'#000000'} />
                 </View>
@@ -61,7 +58,9 @@ const Setting = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.borderLineView}></View>
-            <TouchableOpacity style={styles.logOutButton}>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('Login')}
+                style={styles.logOutButton}>
                 <Text style={styles.txtLogOut}>Log Out</Text>
             </TouchableOpacity>
         </View>
@@ -78,15 +77,16 @@ const styles = StyleSheet.create(
             height: hp('13%'),
             width: wp('100%'),
             backgroundColor: '#45D4FF',
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
         },
         headerView: {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingHorizontal: wp('4%'),
-            marginTop: hp('8%')
+            paddingHorizontal: wp('3%'),
+            marginTop: hp('7%')
+        },
+        crossButton: {
+            marginLeft: wp('-1%')
         },
         txtSetting: {
             fontSize: 20,
@@ -109,26 +109,22 @@ const styles = StyleSheet.create(
         },
         viewInputOne: {
             width: wp('86%'),
-            height: hp('5%'),
+            height: hp('6%'),
             borderBottomWidth: 1,
             borderColor: '#D4D4D4',
             flexDirection: 'row',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
         },
         inputOne: {
             flex: 1,
             color: '#000000',
             fontSize: 14,
-            fontWeight: '700',
             marginLeft: wp('3%')
-        },
-        inputImage: {
-            marginLeft: wp('2%')
         },
         viewInputTwo: {
             width: wp('86%'),
-            height: hp('5%'),
+            height: hp('6%'),
             borderBottomWidth: 1,
             borderColor: '#D4D4D4',
             marginTop: hp('3%'),
@@ -140,12 +136,11 @@ const styles = StyleSheet.create(
             flex: 1,
             color: '#000000',
             fontSize: 14,
-            fontWeight: '700',
             marginLeft: wp('3%')
         },
         viewInputThree: {
             width: wp('86%'),
-            height: hp('5%'),
+            height: hp('6%'),
             borderBottomWidth: 1,
             borderColor: '#D4D4D4',
             marginTop: hp('3%'),
@@ -157,7 +152,6 @@ const styles = StyleSheet.create(
             flex: 1,
             color: '#000000',
             fontSize: 14,
-            fontWeight: '700',
             marginLeft: wp('3%')
         },
         toChangeLineTxt: {
@@ -221,10 +215,8 @@ const styles = StyleSheet.create(
         },
         logOutButton: {
             alignItems: 'center',
-            marginTop: hp('20%'),
+            marginTop: hp('18%'),
         }
-
-
     },
 );
 

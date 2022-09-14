@@ -11,7 +11,7 @@ import {
     ScrollView,
     ImageBackground
 } from 'react-native';
-const Groups = () => {
+const Groups = (props) => {
     let arr = [
         {
             groupName: 'Workout Squad',
@@ -126,24 +126,29 @@ const Groups = () => {
     return (
         <View style={styles.flex1Container}>
             <View style={styles.headerItems}>
-                <Image
-                    source={require('../../assets/images/imageThree.png')}
-                    style={styles.image} />
+                <TouchableOpacity
+                    onPress={() => props.navigation.navigate('Profile')}>
+                    <Image
+                        source={require('../../assets/images/imageThree.png')}
+                        style={styles.image} />
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.groupButton}>
                     <Text style={styles.txtGroup}>Groups</Text>
                     <View style={styles.downArrowPng}>
                         <Icon name='caret-down-outline' size={20} color='#FFFFFF' />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => props.navigation.navigate('Notification')}>
                     <View style={styles.notificationView}>
                         <Icon name='notifications' size={20} color='#FFFFFF' />
                     </View>
                 </TouchableOpacity>
             </View>
-            {/* First View */}
+            {/* Card Design */}
             <View style={styles.firstViewContainer}>
-                <ScrollView>
+                <View style={{height:hp(1),marginTop:20}}></View>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         {arr.map((res, index) => {
                             return (
@@ -166,7 +171,18 @@ const Groups = () => {
                                                         <Text style={styles.txtSeven}>{res.user.length >= 8 ? '7+' : res.user.length}</Text>
                                                     </View>
                                                 </View>
-                                                <Text style={styles.txt22Member}>{res.user.length} Members • 3 Upcoming Events</Text>
+                                                <View style={styles.addresView}>
+                                                    <Icon name='location-outline' size={17} color='#FFFFFF' />
+                                                    <Text style={styles.txtAddress}> Shahbir Town D-Type Building No 17 Flat No 10</Text>
+                                                </View>
+                                                <View style={styles.timeView}>
+                                                    <Icon name='alarm-outline' size={16} color='#FFFFFF' />
+                                                    <Text style={styles.timeTxt}> 12:30 PM</Text>
+                                                </View>
+                                                <View style={styles.dateView}>
+                                                    <Icon name='calendar-outline' size={15} color='#FFFFFF' />
+                                                    <Text style={styles.dateTxt}>  Sep 14th, 2022</Text>
+                                                </View>
                                             </View>
                                             <View style={styles.optionAndArrowButton}>
                                                 <TouchableOpacity>
@@ -300,8 +316,6 @@ const styles = StyleSheet.create(
         },
         firstViewContainer: {
             flex: 1,
-            // height: hp('100%'),
-            // width: wp('100%'),
             backgroundColor: '#FFFFFF',
             borderTopLeftRadius: 50,
             borderTopRightRadius: 50,
@@ -313,14 +327,14 @@ const styles = StyleSheet.create(
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
-            alignItems: 'center'
+            overflow: 'hidden',
         },
         firstView: {
-            height: hp('49%'),
-            width: wp('92%'),
+            height: hp('51%'),
+            width: wp('90%'),
             backgroundColor: '#FFFFFF',
             borderRadius: 30,
-            marginTop: hp('3%'),
+            marginBottom: hp('3%'),
             shadowColor: '#000',
             shadowOffset: {
                 width: 0,
@@ -329,10 +343,11 @@ const styles = StyleSheet.create(
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
+            alignSelf: 'center'
         },
         imageBackground: {
-            height: hp('15%'),
-            width: wp('92%'),
+            height: hp('18%'),
+            width: wp('90%'),
             overflow: 'hidden',
             borderRadius: 30,
             shadowColor: '#000',
@@ -343,13 +358,14 @@ const styles = StyleSheet.create(
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
+            alignSelf: 'center'
         },
         imageBackgroundOne: {
-            height: hp('15%'),
-            width: wp('92%'),
+            height: hp('18%'),
+            width: wp('90%'),
             overflow: 'hidden',
             borderRadius: 30,
-            marginTop: hp('3%'),
+            marginBottom: hp('3%'),
             shadowColor: '#000',
             shadowOffset: {
                 width: 0,
@@ -358,13 +374,14 @@ const styles = StyleSheet.create(
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
+            alignSelf: 'center'
         },
         imageBackgroundLayer: {
-            height: hp('15%'),
-            width: wp('92%'),
+            height: hp('18%'),
+            width: wp('90%'),
             flexDirection: 'row',
             paddingHorizontal: wp('5%'),
-            paddingVertical: hp('2%')
+            paddingVertical: hp('0.8%')
         },
         userImagesView: {
             width: wp('65%')
@@ -398,18 +415,42 @@ const styles = StyleSheet.create(
             color: '#000000',
             fontWeight: '600',
         },
-        txt22Member: {
+        txtAddress: {
             fontSize: 12,
             fontWeight: '700',
             color: '#FFFFFF',
-            marginTop: hp('1%')
+        },
+        addresView: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: hp('0.7%')
+        },
+        timeTxt: {
+            fontSize: 12,
+            fontWeight: '700',
+            color: '#FFFFFF',
+        },
+        timeView: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: hp('0.7%')
+        },
+        dateTxt:{
+            fontSize: 12,
+            fontWeight: '700',
+            color: '#FFFFFF',
+        },
+        dateView:{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: hp('0.7%')
         },
         optionAndArrowButton: {
             paddingHorizontal: wp('9%'),
-            paddingVertical: hp('1%'),
+            paddingVertical: hp('3%'),
         },
         arrowDownIcon: {
-            marginTop: hp('3%'),
+            marginTop: hp('6%'),
         },
         descriptionTxtView: {
             height: hp('8%'),
@@ -454,12 +495,14 @@ const styles = StyleSheet.create(
             borderRadius: 25,
             alignItems: 'center',
             justifyContent: 'center',
-            marginRight:wp('2%'),
+            marginRight: wp('2%'),
         },
         schedulesContainer: {
+            width: wp('85%'),
             flexDirection: 'row',
-            marginTop:hp('3%'),
-            paddingHorizontal: wp('3%'),
+            marginTop: hp('3%'),
+            alignSelf: 'center'
+            // paddingHorizontal: wp('3%'),
         },
         txtTime: {
             fontSize: 10,

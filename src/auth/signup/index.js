@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -12,16 +12,16 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Login = props => {
   const [inputsArray, setInputArray] = useState([
-    {value: '', name: 'User Name'},
-    {value: '', name: 'First Name'},
-    {value: '', name: 'Last Name'},
-    {value: '', name: 'Phone Number'},
-    {value: '', name: 'Password'},
-    {value: '', name: 'Confirm Password'},
+    { value: '', name: 'User Name' },
+    { value: '', name: 'First Name' },
+    { value: '', name: 'Last Name' },
+    { value: '', name: 'Phone Number' },
+    { value: '', name: 'Password' },
+    { value: '', name: 'Confirm Password' },
   ]);
 
   return (
@@ -36,7 +36,8 @@ const Login = props => {
       <View style={styles.cardDesign}>
         <View style={styles.topContent}>
           <Text style={styles.createText}>Create Account</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => alert('Coming soon InshAllah')}>
             <FastImage
               source={require('../../assets/images/camera.png')}
               style={styles.cameraImage}
@@ -59,10 +60,14 @@ const Login = props => {
               />
             );
           })}
-          <TouchableOpacity style={styles.signInBtn}>
+          <TouchableOpacity
+            onPress={() => props.navigation.goBack('login')}
+            style={styles.signInBtn}>
             <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.forgotPassView}>
+          <TouchableOpacity
+            onPress={() => alert('Coming Soon InshAllah')}
+            style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
@@ -83,6 +88,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#45D4FF'
   },
   waveImage: {
     height: hp(14),
@@ -129,7 +135,7 @@ const styles = StyleSheet.create({
   signInBtn: {
     backgroundColor: '#45D4FF',
     width: wp(70),
-    paddingVertical: '5%',
+    paddingVertical: '4%',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '5%',
