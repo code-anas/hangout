@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 // Screens
 import Login from './src/auth/login';
 import SignUp from './src/auth/signup';
+import CreateHangout from './src/auth/CreateHangout';
 
 const RootStack = createStackNavigator();
 
@@ -20,6 +21,7 @@ function AppNavigator(props) {
             }}>
             <RootStack.Screen name="Login" component={Login} />
             <RootStack.Screen name="SignUp" component={SignUp} />
+            <RootStack.Screen name="CreateHangout" component={CreateHangout} />
           </RootStack.Navigator>
         </NavigationContainer>
       </SafeAreaView>

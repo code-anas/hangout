@@ -38,7 +38,7 @@ const Login = props => {
           <TouchableOpacity style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signInBtn}>
+          <TouchableOpacity style={styles.signInBtn} onPress={() => props.navigation.navigate('CreateHangout')}>
             <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
           <TouchableOpacity
