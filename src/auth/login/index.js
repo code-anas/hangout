@@ -12,6 +12,7 @@ import {
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Button from '../../components/Button';
 
 const Login = props => {
   return (
@@ -38,9 +39,7 @@ const Login = props => {
           <TouchableOpacity style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signInBtn}>
-            <Text style={styles.signInText}>Sign In</Text>
-          </TouchableOpacity>
+          <Button joMarzi={'Anas'} styleDesign={styles.buttonDesignProps} />
           <TouchableOpacity
             style={styles.registerBtn}
             onPress={() => props.navigation.navigate('SignUp')}>
@@ -135,6 +134,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  buttonDesignProps: {backgroundColor: 'black'},
 });
 
 export default Login;
