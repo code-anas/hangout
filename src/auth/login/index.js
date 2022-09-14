@@ -11,7 +11,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Login = props => {
   return (
@@ -40,10 +40,8 @@ const Login = props => {
             style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('Groups')}
-            style={styles.signInBtn}>
-            <Text style={styles.signInText}>Log In</Text>
+          <TouchableOpacity style={styles.signInBtn}>
+            <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.registerBtn}
@@ -141,6 +139,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000000'
   },
+  buttonDesignProps: {backgroundColor: 'black'},
 });
 
 export default Login;

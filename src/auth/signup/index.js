@@ -12,7 +12,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Login = props => {
   const [inputsArray, setInputArray] = useState([
@@ -60,14 +60,10 @@ const Login = props => {
               />
             );
           })}
-          <TouchableOpacity
-            onPress={() => props.navigation.goBack('login')}
-            style={styles.signInBtn}>
+          <TouchableOpacity style={styles.signInBtn}>
             <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => alert('Coming Soon InshAllah')}
-            style={styles.forgotPassView}>
+          <TouchableOpacity style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
