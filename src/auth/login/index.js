@@ -11,7 +11,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from '../../components/Button';
+import TextInputs from '../../components/TextInputs';
 
 const Login = props => {
   return (
@@ -25,24 +27,17 @@ const Login = props => {
       />
       <View style={styles.cardDesign}>
         <View style={styles.cardView}>
-          <TextInput
-            style={styles.input}
-            placeholder="Phone Number"
-            placeholderTextColor={'#595959'}
+          <TextInputs placeHolder={'Email'}
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            placeholderTextColor={'#595959'}
-          />
+          <TextInputs placeHolder={'Password'} />
           <TouchableOpacity
             onPress={() => alert('Coming Soon InshAllah')}
             style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signInBtn}>
-            <Text style={styles.signInText}>Sign In</Text>
-          </TouchableOpacity>
+          <Button
+            onPressSignin={() => props.navigation.navigate('Groups')}
+            button={'Sign In'} />
           <TouchableOpacity
             style={styles.registerBtn}
             onPress={() => props.navigation.navigate('SignUp')}>
@@ -66,7 +61,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color:'#45D4FF'
+    color: '#45D4FF'
   },
   waveImage: {
     height: hp(14),
@@ -139,7 +134,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000000'
   },
-  buttonDesignProps: {backgroundColor: 'black'},
+  buttonDesignProps: { backgroundColor: 'black' },
 });
 
 export default Login;
