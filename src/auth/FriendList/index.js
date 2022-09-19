@@ -10,6 +10,7 @@ import {
     TouchableOpacity,
     ScrollView
 } from 'react-native';
+import Header from '../../components/Header';
 
 const FriendList = (props) => {
     let arr = [
@@ -22,19 +23,8 @@ const FriendList = (props) => {
     ]
     return (
         <View style={styles.flex1Container}>
-            <View style={styles.headerContainer}>
-                <View style={styles.headerView}>
-                    <TouchableOpacity
-                        style={styles.leftArrowButton}
-                        onPress={() => props.navigation.goBack('profile')}>
-                        <Icon name='chevron-back-outline' size={25} color='#FFFFFF' />
-                    </TouchableOpacity>
-                    <Text style={styles.TxtfriendList}>FriendList</Text>
-                    <TouchableOpacity>
-                        <Icon name='add-circle-outline' size={28} color='#FFFFFF' />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <Header screenName={'Friend List'}
+                onpressLeftArrow={() => props.navigation.goBack('Profile')} />
             <View style={styles.txtInputview}>
                 <Image
                     source={require('../../assets/images/searchIcon.png')}
@@ -67,26 +57,6 @@ const styles = StyleSheet.create(
     {
         flex1Container: {
             flex: 1,
-        },
-        headerContainer: {
-            height: hp('13%'),
-            width: wp('100%'),
-            backgroundColor: '#45D4FF',
-        },
-        headerView: {
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingHorizontal: wp('3%'),
-            marginTop: hp('7%')
-        },
-        leftArrowButton: {
-            marginLeft:wp('-1%') 
-        },
-        TxtfriendList: {
-            fontSize: 22,
-            fontWeight: '700',
-            color: '#FFFFFF',
         },
         txtInputview: {
             marginTop: hp('4%'),

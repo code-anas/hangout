@@ -1,23 +1,23 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
 const Button = props => {
-  console.log('asjkhdjkasdjh', props.styleDesign);
-
   return (
-    <TouchableOpacity style={[styles.signInBtn, props.styleDesign]}>
-      <Text style={styles.signInText}>{props.joMarzi}</Text>
+    <TouchableOpacity
+      onPress={props.onPressSignin}
+      style={[styles.signInBtn, props.styleDesign]}>
+      <Text style={styles.signInText}>{props.button}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   signInBtn: {
-    backgroundColor: 'red',
+    backgroundColor: '#45D4FF',
     width: wp(70),
     paddingVertical: '5%',
     alignItems: 'center',

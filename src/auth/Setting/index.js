@@ -10,21 +10,13 @@ import {
     TouchableOpacity,
     ScrollView
 } from 'react-native';
+import Header from '../../components/Header';
 
 const Setting = (props) => {
     return (
         <View style={styles.flex1Container}>
-            <View style={styles.headerContainer}>
-                <View style={styles.headerView}>
-                    <TouchableOpacity
-                        style={styles.crossButton}
-                        onPress={() => props.navigation.goBack('Profile')}>
-                        <Icon name='close' size={28} color='#FFFFFF' />
-                    </TouchableOpacity>
-                    <Text style={styles.txtSetting}>Settings</Text>
-                    <Text style={styles.txt}>AA</Text>
-                </View>
-            </View>
+            <Header screenName={'Setting'}
+                onpressCross={() => { props.navigation.goBack('Profile') }} />
             <Text style={styles.accInfoTxt}>Account Information</Text>
             <View style={styles.inputViewContainer}>
                 <View style={styles.viewInputOne}>
@@ -72,29 +64,6 @@ const styles = StyleSheet.create(
     {
         flex1Container: {
             flex: 1,
-        },
-        headerContainer: {
-            height: hp('13%'),
-            width: wp('100%'),
-            backgroundColor: '#45D4FF',
-        },
-        headerView: {
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingHorizontal: wp('3%'),
-            marginTop: hp('7%')
-        },
-        crossButton: {
-            marginLeft: wp('-1%')
-        },
-        txtSetting: {
-            fontSize: 20,
-            fontWeight: '600',
-            color: '#FFFFFF',
-        },
-        txt: {
-            color: '#45D4FF',
         },
         accInfoTxt: {
             fontSize: 22,

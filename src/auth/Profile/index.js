@@ -11,28 +11,14 @@ import {
     ScrollView
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
-
+import Header from '../../components/Header';
 const Profile = (props) => {
     return (
         <View style={styles.flex1Container}>
-            <View style={styles.headerContainer}>
-                <View style={styles.headerView}>
-                    <TouchableOpacity
-                        style={styles.crossButton}
-                        onPress={() => props.navigation.goBack('Groups')}>
-                        <Icon name='close' size={28} color='#FFFFFF' />
-                    </TouchableOpacity>
-                    <Text style={styles.txtProfile}>Profile</Text>
-                    <TouchableOpacity
-                        onPress={() => props.navigation.navigate('FriendList')}>
-                        <Icon name='people' size={25} color='#FFFFFF' />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => props.navigation.navigate('Setting')}>
-                        <Icon name='settings-outline' size={21} color='#FFFFFF' />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <Header screenName={'Profile'}
+                onpressCross={() => { props.navigation.navigate('Groups') }}
+                onpressFriend={() => { props.navigation.navigate('FriendList') }}
+                onpressSetting={() => { props.navigation.navigate('Setting') }} />
             <View style={styles.nameProfilePicView}>
                 <Image
                     style={styles.imagePng}
@@ -58,27 +44,6 @@ const styles = StyleSheet.create(
     {
         flex1Container: {
             flex: 1,
-        },
-        headerContainer: {
-            height: hp('13%'),
-            width: wp('100%'),
-            backgroundColor: '#45D4FF',
-        },
-        headerView: {
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingHorizontal: wp('3%'),
-            marginTop: hp('7%')
-        },
-        crossButton: {
-            marginLeft: wp('-1%')
-        },
-        txtProfile: {
-            fontSize: 20,
-            fontWeight: '600',
-            color: '#FFFFFF',
-            marginLeft: wp('20%')
         },
         nameProfilePicView: {
             alignItems: 'center',
