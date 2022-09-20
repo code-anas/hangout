@@ -64,9 +64,13 @@ const Login = props => {
           <Button
             onPressSignin={() => props.navigation.navigate('Login')}
             button={'Sign Up'} />
-          <TouchableOpacity style={styles.forgotPassView}>
-            <Text style={styles.forgotPassText}>Forgot Password?</Text>
-          </TouchableOpacity>
+          <View style={styles.signInView}>
+            <Text style={styles.alreadyHaveAnAccText}>Already have an account?  </Text>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('Login')}>
+              <Text style={styles.signInText}>Sign In</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'absolute',
     bottom: 0,
-    height: hp(72),
+    height: hp(73),
     width: '100%',
   },
   textInputView: {
@@ -120,14 +124,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#D4D4D4',
   },
-  forgotPassView: {
-    alignSelf: 'flex-end',
-    marginRight: '10%',
+  signInView: {
+    flexDirection: 'row',
     marginTop: '5%',
   },
-  forgotPassText: {
+  signInText: {
     color: '#0266F2',
     fontWeight: 'bold',
+    fontSize: 16
+  },
+  alreadyHaveAnAccText: {
+    color: '#444547',
+    fontWeight: 'bold',
+    fontSize: 14
   },
   signInBtn: {
     backgroundColor: '#45D4FF',
@@ -144,10 +153,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  },
-  signInText: {
-    fontSize: 20,
-    color: '#FFFFFF',
   },
   registerBtn: {
     marginTop: '10%',
