@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
 } from 'react-native';
 const Header = (props) => {
-    console.log('scree', props.screenName)
     return (
         <View style={styles.headerContainer}>
             <View style={styles.headerView}>

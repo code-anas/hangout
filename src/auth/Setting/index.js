@@ -11,6 +11,7 @@ import {
     ScrollView
 } from 'react-native';
 import Header from '../../components/Header';
+import IconInput from '../../components/IconInput';
 
 const Setting = (props) => {
     return (
@@ -19,22 +20,12 @@ const Setting = (props) => {
                 onpressCross={() => { props.navigation.goBack('Profile') }} />
             <Text style={styles.accInfoTxt}>Account Information</Text>
             <View style={styles.inputViewContainer}>
-                <View style={styles.viewInputOne}>
-                    <Icon name='person-outline' size={20} color='#595959' />
-                    <TextInput style={styles.inputOne}
-                        placeholder='First Name' placeholderTextColor={'#000000'} />
-                </View>
-                <View style={styles.viewInputTwo}>
-                    <Icon name='person-outline' size={20} color='#595959' />
-                    <TextInput style={styles.inputTwo}
-                        placeholder='Last Name' placeholderTextColor={'#000000'} />
-                </View>
-                <View style={styles.viewInputThree}>
-                    <Icon name='mail-outline' size={20} color='#595959' />
-                    <TextInput style={styles.inputThree}
-                        placeholder='Bhatti@gmail.com' placeholderTextColor={'#000000'} />
-                </View>
-
+                <IconInput placeHolder={'First Name'}
+                    image={'person-outline'} />
+                <IconInput placeHolder={'Last Name'}
+                    image={'person-outline'} />
+                <IconInput placeHolder={'Bhatti@gmail.com'}
+                    image={'mail-outline'} />
             </View>
             <View style={styles.discriptionTxtView}>
                 <Text style={styles.toChangeLineTxt}>To change your password, please log out</Text>
@@ -75,53 +66,6 @@ const styles = StyleSheet.create(
         inputViewContainer: {
             paddingHorizontal: wp('7%'),
             marginTop: hp('4%')
-        },
-        viewInputOne: {
-            width: wp('86%'),
-            height: hp('6%'),
-            borderBottomWidth: 1,
-            borderColor: '#D4D4D4',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
-        inputOne: {
-            flex: 1,
-            color: '#000000',
-            fontSize: 14,
-            marginLeft: wp('3%')
-        },
-        viewInputTwo: {
-            width: wp('86%'),
-            height: hp('6%'),
-            borderBottomWidth: 1,
-            borderColor: '#D4D4D4',
-            marginTop: hp('3%'),
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-        inputTwo: {
-            flex: 1,
-            color: '#000000',
-            fontSize: 14,
-            marginLeft: wp('3%')
-        },
-        viewInputThree: {
-            width: wp('86%'),
-            height: hp('6%'),
-            borderBottomWidth: 1,
-            borderColor: '#D4D4D4',
-            marginTop: hp('3%'),
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
-        inputThree: {
-            flex: 1,
-            color: '#000000',
-            fontSize: 14,
-            marginLeft: wp('3%')
         },
         toChangeLineTxt: {
             fontSize: 14,
@@ -184,7 +128,7 @@ const styles = StyleSheet.create(
         },
         logOutButton: {
             alignItems: 'center',
-            marginTop: hp('18%'),
+            marginTop: hp('12%'),
         }
     },
 );

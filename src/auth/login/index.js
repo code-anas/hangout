@@ -13,7 +13,7 @@ import {
 import FastImage from 'react-native-fast-image';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../components/Button';
-import TextInputs from '../../components/TextInputs';
+import IconInput from '../../components/IconInput';
 
 const Login = props => {
   return (
@@ -27,9 +27,8 @@ const Login = props => {
       />
       <View style={styles.cardDesign}>
         <View style={styles.cardView}>
-          <TextInputs placeHolder={'Email'}
-          />
-          <TextInputs placeHolder={'Password'} />
+          <IconInput placeHolder={'Email'} />
+          <IconInput placeHolder={'Password'} />
           <TouchableOpacity
             onPress={() => alert('Coming Soon InshAllah')}
             style={styles.forgotPassView}>
