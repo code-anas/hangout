@@ -6,10 +6,14 @@ import {
 } from 'react-native-responsive-screen';
 
 const Button = props => {
-  console.log('asjkhdjkasdjh', props.styleDesign);
-
   return (
-    <TouchableOpacity style={[styles.signInBtn, props.styleDesign]}>
+    <TouchableOpacity
+    disabled={props.visiblity}
+      onPress={() => props.onTap()}
+      style={[
+        styles.signInBtn,
+        props.styleDesign,
+      ]}>
       <Text style={styles.signInText}>{props.joMarzi}</Text>
     </TouchableOpacity>
   );
@@ -17,23 +21,16 @@ const Button = props => {
 
 const styles = StyleSheet.create({
   signInBtn: {
-    backgroundColor: 'red',
+    backgroundColor: '#45D4FF',
+    height:hp(7),
     width: wp(70),
-    paddingVertical: '5%',
+    justifyContent:'center',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '5%',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   signInText: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#FFFFFF',
   },
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -13,13 +13,17 @@ import {
 import FastImage from 'react-native-fast-image';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Button from '../../components/Button';
+import Headercom from '../../components/Headercom';
+import Modal from '../../components/Modal';
 
 const Login = props => {
+  const [checkTest, setCheckTest] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.logoText}>HANGOUT</Text>
-      </View>
+      <Headercom
+        Title="Hangout"
+        loginheaderTextcolor={styles.headerTextcolor}
+      />
       <FastImage
         source={require('../../assets/images/waves.png')}
         style={styles.waveImage}
@@ -39,14 +43,31 @@ const Login = props => {
           <TouchableOpacity style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
-          <Button joMarzi={'Anas'} styleDesign={styles.buttonDesignProps} />
+          <Button
+            joMarzi={'Sign  In'}
+            styleDesign={styles.buttonDesignProps}
+            onTap={() => props.navigation.navigate('CreateHangout')}
+          />
           <TouchableOpacity
             style={styles.registerBtn}
             onPress={() => props.navigation.navigate('SignUp')}>
             <Text style={styles.registerText}>Register</Text>
           </TouchableOpacity>
+{/* 
+          <TouchableOpacity
+            style={{backgroundColor: 'red', padding: 20}}
+            onPress={() => setCheckTest(true)}>
+            <Text>OPen</Text>
+          </TouchableOpacity> */}
         </View>
       </View>
+      {/* <Modal
+        visibleTest={checkTest}
+        callBackTestProp={() => setCheckTest(false)}
+        callBackShowAlert={(dasdas) => {
+          alert(dasdas);
+        }}
+      /> */}
     </SafeAreaView>
   );
 };
@@ -58,7 +79,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: hp(13),
+    height: hp(10),
   },
   logoText: {
     fontSize: 20,
@@ -83,7 +104,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'absolute',
     bottom: 0,
-    height: hp(72),
+    height: hp(79),
     width: '100%',
   },
   cardView: {
@@ -107,22 +128,7 @@ const styles = StyleSheet.create({
     color: '#0266F2',
     fontWeight: 'bold',
   },
-  signInBtn: {
-    backgroundColor: '#45D4FF',
-    width: wp(70),
-    paddingVertical: '5%',
-    alignItems: 'center',
-    borderRadius: 40,
-    marginTop: '10%',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
+
   signInText: {
     fontSize: 20,
     color: '#FFFFFF',
@@ -134,7 +140,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  buttonDesignProps: {backgroundColor: 'black'},
+  buttonDesignProps: {
+    backgroundColor: '#45D4FF',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  headerTextcolor: {
+    color: '#45D4FF',
+  },
 });
 
 export default Login;
