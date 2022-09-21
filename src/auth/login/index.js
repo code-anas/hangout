@@ -11,9 +11,10 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
+import HeaderComp from '../../components/Header';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Button from '../../components/Button';
-import HeaderComp from '../../components/Header';
+import IconInput from '../../components/IconInput';
 
 const Login = props => {
   return (
@@ -28,23 +29,21 @@ const Login = props => {
       />
       <View style={styles.cardDesign}>
         <View style={styles.cardView}>
-          <TextInput
-            style={styles.input}
-            placeholder="Phone Number"
-            placeholderTextColor={'#595959'}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            placeholderTextColor={'#595959'}
-          />
-          <TouchableOpacity style={styles.forgotPassView}>
+          <IconInput placeHolder={'Email'} />
+          <IconInput placeHolder={'Password'} />
+          <TouchableOpacity
+            onPress={() => alert('Coming Soon InshAllah')}
+            style={styles.forgotPassView}>
             <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
           </TouchableOpacity>
           <Button
-            joMarzi={'Sign  In'}
+            joMarzi={'Sign  In CreateHangout'}
             styleDesign={styles.buttonDesignProps}
             onTap={() => props.navigation.navigate('CreateHangout')}
+          />
+          <Button
+            onPressSignin={() => props.navigation.navigate('Groups')}
+            button={'Sign In Groups'}
           />
           <TouchableOpacity
             style={styles.registerBtn}
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#45D4FF',
   },
   waveImage: {
     height: hp(14),
@@ -113,7 +113,22 @@ const styles = StyleSheet.create({
     color: '#0266F2',
     fontWeight: 'bold',
   },
-
+  signInBtn: {
+    backgroundColor: '#45D4FF',
+    width: wp(70),
+    paddingVertical: '4%',
+    alignItems: 'center',
+    borderRadius: 40,
+    marginTop: '10%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
   signInText: {
     fontSize: 20,
     color: '#FFFFFF',
@@ -124,6 +139,7 @@ const styles = StyleSheet.create({
   registerText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#000000',
   },
   buttonDesignProps: {
     backgroundColor: '#45D4FF',
@@ -139,6 +155,7 @@ const styles = StyleSheet.create({
   headerTextcolor: {
     color: '#45D4FF',
   },
+  buttonDesignProps: {backgroundColor: 'black'},
 });
 
 export default Login;

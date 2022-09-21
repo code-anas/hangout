@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -18,12 +18,12 @@ import HeaderComp from '../../components/Header';
 
 const Login = props => {
   const [inputsArray, setInputArray] = useState([
-    {value: '', name: 'User Name'},
-    {value: '', name: 'First Name'},
-    {value: '', name: 'Last Name'},
-    {value: '', name: 'Phone Number'},
-    {value: '', name: 'Password'},
-    {value: '', name: 'Confirm Password'},
+    { value: '', name: 'User Name' },
+    { value: '', name: 'First Name' },
+    { value: '', name: 'Last Name' },
+    { value: '', name: 'Phone Number' },
+    { value: '', name: 'Password' },
+    { value: '', name: 'Confirm Password' },
   ]);
 
   return (
@@ -39,7 +39,8 @@ const Login = props => {
       <View style={styles.cardDesign}>
         <View style={styles.topContent}>
           <Text style={styles.createText}>Create Account</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => alert('Coming soon InshAllah')}>
             <FastImage
               source={require('../../assets/images/camera.png')}
               style={styles.cameraImage}
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#45D4FF'
   },
   waveImage: {
     height: hp(14),
@@ -119,14 +121,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#D4D4D4',
   },
-  forgotPassView: {
-    alignSelf: 'flex-end',
-    marginRight: '10%',
+  signInView: {
+    flexDirection: 'row',
     marginTop: '5%',
   },
-  forgotPassText: {
+  signInText: {
     color: '#0266F2',
     fontWeight: 'bold',
+    fontSize: 16
+  },
+  alreadyHaveAnAccText: {
+    color: '#444547',
+    fontWeight: 'bold',
+    fontSize: 14
   },
   headerTextcolor: {
     color: '#45D4FF',
@@ -134,7 +141,7 @@ const styles = StyleSheet.create({
   signInBtn: {
     backgroundColor: '#45D4FF',
     width: wp(70),
-    paddingVertical: '5%',
+    paddingVertical: '4%',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '5%',
@@ -146,10 +153,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  },
-  signInText: {
-    fontSize: 20,
-    color: '#FFFFFF',
   },
   registerBtn: {
     marginTop: '10%',

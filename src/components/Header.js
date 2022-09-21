@@ -1,53 +1,75 @@
-import React, {useState} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import React from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
-
-const HeaderComp = props => {
-  const [LeftHide, setLeftHide] = useState(props?.LeftHide);
-  const [RightHide, setRightHide] = useState(props?.RightHide);
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+const Header = props => {
   return (
-    <View
-      style={[styles.header, {backgroundColor: props?.backgroundColorHeader}]}>
-      {LeftHide == true ? (
-        <TouchableOpacity onPress={props.onPressLeft} style={styles.backbutton}>
-          <Icon name="chevron-back-outline" size={35} color="#FFFFFF" />
-        </TouchableOpacity>
-      ) : (
-        <Text></Text>
-      )}
-      <Text style={[styles.headerText, props?.loginheaderTextcolor]}>
-        {props.Title}
-      </Text>
-      {RightHide == true ? (
-        <TouchableOpacity
-          onPress={props.onPressRight}
-          style={styles.backbutton}>
-          <Icon name="chevron-forward-outline" size={35} color="#FFFFFF" />
-        </TouchableOpacity>
-      ) : (
-        <Text></Text>
-      )}
+    <View style={styles.headerContainer}>
+      <View style={styles.headerView}>
+        {props.screenName === 'Friend List' ? (
+          <TouchableOpacity
+            onPress={props.onpressLeftArrow}
+            style={styles.crossButton}>
+            <Icon name="chevron-back-outline" size={25} color="#FFFFFF" />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={props.onpressCross}
+            style={styles.crossButton}>
+            <Icon name="close" size={28} color="#FFFFFF" />
+          </TouchableOpacity>
+        )}
+
+        <Text style={styles.txtProfile}>{props.screenName}</Text>
+
+        {props.screenName === 'Friend List' ||
+        props.screenName === 'Setting' ? (
+          <>
+            <View style={{width: 30}}></View>
+            <View style={{width: 30}}></View>
+          </>
+        ) : (
+          <>
+            <TouchableOpacity onPress={props.onpressFriend}>
+              <Icon name="people" size={25} color="#FFFFFF" />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={props.onpressSetting}>
+              <Icon name="settings-outline" size={21} color="#FFFFFF" />
+            </TouchableOpacity>
+          </>
+        )}
+      </View>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
-  header: {
+  headerContainer: {
+    height: hp('13%'),
+    width: wp('100%'),
+    backgroundColor: '#45D4FF',
+  },
+  headerView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: hp(10),
-    paddingHorizontal: wp(5),
+    paddingHorizontal: wp('3%'),
+    marginTop: hp('7%'),
   },
-  headerText: {
-    fontSize: 24,
-    fontWeight: 'bold',
+  crossButton: {
+    marginLeft: wp('-1%'),
+  },
+  txtProfile: {
+    fontSize: 20,
+    fontWeight: '600',
     color: '#FFFFFF',
+    marginLeft: wp('20%'),
+  },
+  txt: {
+    color: '#45D4FF',
   },
 });
-
-export default HeaderComp;
+export default Header;
