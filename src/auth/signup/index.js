@@ -13,6 +13,8 @@ import {
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Button from '../../components/Button';
+import HeaderComp from '../../components/Header';
 
 const Login = props => {
   const [inputsArray, setInputArray] = useState([
@@ -26,9 +28,10 @@ const Login = props => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.logoText}>HANGOUT</Text>
-      </View>
+      <HeaderComp
+        Title="Hangout"
+        loginheaderTextcolor={styles.headerTextcolor}
+      />
       <FastImage
         source={require('../../assets/images/waves.png')}
         style={styles.waveImage}
@@ -59,12 +62,11 @@ const Login = props => {
               />
             );
           })}
-          <TouchableOpacity style={styles.signInBtn}>
-            <Text style={styles.signInText}>Sign In</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.forgotPassView}>
-            <Text style={styles.forgotPassText}>Forgot Password?</Text>
-          </TouchableOpacity>
+          <Button
+            joMarzi={'Sign Up'}
+            styleDesign={styles.buttonDesignProps}
+            onTap={() => props.navigation.goBack()}
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'absolute',
     bottom: 0,
-    height: hp(72),
+    height: hp(79),
     width: '100%',
   },
   textInputView: {
@@ -125,6 +127,9 @@ const styles = StyleSheet.create({
   forgotPassText: {
     color: '#0266F2',
     fontWeight: 'bold',
+  },
+  headerTextcolor: {
+    color: '#45D4FF',
   },
   signInBtn: {
     backgroundColor: '#45D4FF',
@@ -167,6 +172,17 @@ const styles = StyleSheet.create({
   cameraImage: {
     height: hp(10),
     width: hp(10),
+  },
+  buttonDesignProps: {
+    backgroundColor: '#45D4FF',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 
