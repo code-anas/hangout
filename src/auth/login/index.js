@@ -11,43 +11,36 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FastImage from 'react-native-fast-image';
-import HeaderComp from '../../components/Header';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Button from '../../components/Button';
-import IconInput from '../../components/IconInput';
 
-const Login = props => {
+const Login = (props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderComp
-        Title="Hangout"
-        loginheaderTextcolor={styles.headerTextcolor}
-      />
+      <View style={styles.header}>
+        <Text style={styles.logoText}>HANGOUT</Text>
+      </View>
       <FastImage
         source={require('../../assets/images/waves.png')}
         style={styles.waveImage}
       />
       <View style={styles.cardDesign}>
         <View style={styles.cardView}>
-          <IconInput placeHolder={'Email'} />
-          <IconInput placeHolder={'Password'} />
-          <TouchableOpacity
-            onPress={() => alert('Coming Soon InshAllah')}
-            style={styles.forgotPassView}>
-            <Text style={styles.forgotPassText}>Forgot Passwords?</Text>
-          </TouchableOpacity>
-          <Button
-            joMarzi={'Sign  In CreateHangout'}
-            styleDesign={styles.buttonDesignProps}
-            onTap={() => props.navigation.navigate('CreateHangout')}
+          <TextInput
+            style={styles.input}
+            placeholder="Phone Number"
+            placeholderTextColor={'#595959'}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            placeholderTextColor={'#595959'}
           />
           <Button
-            onPressSignin={() => props.navigation.navigate('Groups')}
-            button={'Sign In Groups'}
+            textName={'Sign In'}
+            onPress={() => props.navigation.navigate('Groups')}
           />
-          <TouchableOpacity
-            style={styles.registerBtn}
-            onPress={() => props.navigation.navigate('SignUp')}>
+          <TouchableOpacity style={styles.registerBtn}>
             <Text style={styles.registerText}>Register</Text>
           </TouchableOpacity>
         </View>
@@ -63,12 +56,11 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: hp(10),
+    height: hp(13),
   },
   logoText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#45D4FF',
   },
   waveImage: {
     height: hp(14),
@@ -89,7 +81,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'absolute',
     bottom: 0,
-    height: hp(79),
+    height: hp(72),
     width: '100%',
   },
   cardView: {
@@ -116,7 +108,7 @@ const styles = StyleSheet.create({
   signInBtn: {
     backgroundColor: '#45D4FF',
     width: wp(70),
-    paddingVertical: '4%',
+    paddingVertical: '5%',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '10%',
@@ -139,23 +131,7 @@ const styles = StyleSheet.create({
   registerText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#000000',
   },
-  buttonDesignProps: {
-    backgroundColor: '#45D4FF',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  headerTextcolor: {
-    color: '#45D4FF',
-  },
-  buttonDesignProps: {backgroundColor: 'black'},
 });
 
 export default Login;

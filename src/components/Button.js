@@ -8,13 +8,10 @@ import {
 const Button = props => {
   return (
     <TouchableOpacity
-    disabled={props.visiblity}
-      onPress={() => props.onTap()}
-      style={[
-        styles.signInBtn,
-        props.styleDesign,
-      ]}>
-      <Text style={styles.signInText}>{props.joMarzi}</Text>
+      disabled={props.visiblity}
+      onPress={() => props.onPress()}
+      style={[styles.signInBtn, props.styleDesign]}>
+      <Text style={styles.signInText}>{props.textName}</Text>
     </TouchableOpacity>
   );
 };
@@ -22,9 +19,9 @@ const Button = props => {
 const styles = StyleSheet.create({
   signInBtn: {
     backgroundColor: '#45D4FF',
-    height:hp(7),
+    height: hp(7),
     width: wp(70),
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 40,
     marginTop: '5%',
